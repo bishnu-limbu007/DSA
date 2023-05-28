@@ -19,7 +19,7 @@ void removeStudent()
     {
       for (j=i-1;j<counter;j++)
         {
-        list[j-1]=list[j];
+        list[j-1]=lis[j];
       }
       counter--;
       printf("The student has been removed.")
