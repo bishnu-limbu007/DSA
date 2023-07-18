@@ -25,11 +25,7 @@ else{
   printf("\nNode inserted at the end");
 }
 void display(){
-  if(header==NULL)
-    printf("\nList is empty");
-else{
-      for(ptrthis=header;ptrthis!=NULL;ptrthis=ptrthis->next){
-        printf("%d\t",ptrthis->data);
+  if(header==NULL) printf("\nList is empty"); else{ for(ptrthis=header;ptrthis!=NULL;ptrthis=ptrthis->next){ printf("%d\t",ptrthis->data);
       }
     }
 }
@@ -39,7 +35,7 @@ void main(){
   while(1)
     {
       system("clear");
-      printf("Select and option:\n1. Insert\2. Remove\3. List\n4. Exit");
+      printf("Select and option:\n1. Insert\n2. Remove\n3. List\n4. Exit");
       ch=getchar();
       switch(ch)
         {
