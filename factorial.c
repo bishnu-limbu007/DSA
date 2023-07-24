@@ -1,7 +1,5 @@
 #include <stdio.h>
-int fact(int a);
-
-{
+int fact(int a){
   if(a==0)
   {
     return 1;
