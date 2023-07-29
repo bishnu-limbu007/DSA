@@ -1,93 +1,165 @@
-#include <conio.h>
+
 #include <stdio.h>
 #include <stdlib.h>
-struct node {
-  int data;
-  struct node *next;
-  struct node *prev;
-};
-struct node *header = NULL;
-struct node *getnode(int n) {
-  struct node *ptrnew = (struct node *)malloc(sizeof(struct node));
-  if (ptrnew == NULL) {
-    printf("\nMemory allocation failed.");
-    _getch();
-    exit(0);
-  }
-  ptrnew->data = n;
-  ptrnew->next = ptrnew->prev = NULL;
-  return ptrnew;
+
+// Structure for a BST node
+struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
 };
 
-void insertAtFront() {
-  struct node *ptrnew;
-  int n;
-  printf("\nEnter new number: ");
-  scanf_s("%d", &n);
-  ptrnew = getnode(n);
-  if (header != NULL) {
-    header = ptrnew;
-  } else {
-    ptrnew->next = header;
-    header->prev = ptrnew;
-  }
-  header = ptrnew;
-  printf("\nNode inserted at the front.");
-}
-void insertAtLast() {
-  struct node *ptrnew, *ptrthis;
-  int n;
-  printf("\nEnter new nubmer: ");
-  scanf_s("%d", &n);
-  ptrnew = getnode(n);
-  if (header == NULL) {
-    header = ptrnew;
-  } else {
-    for (ptrthis = header; ptrthis->next != NULL; ptrthis = ptrthis->next)
-      ;
-    ptrthis->next = ptrnew;
-    ptrnew->prev = ptrthis;
-  }
-  printf("\nNode inserted at the end.");
+// Function to create a new node
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
 }
 
-void insertAfter() {
-  struct node *ptrnew, *ptrthis;
-  int n, target;
-  printf("\nEnter a node after which you want to inset: ");
-  scanf_s("%d", &target);
-  for (ptrthis = header; ptrthis != NULL; ptrthis = ptrthis->next) {
-    if (ptrthis->data == target) {
-      // insert and return
-      printf("Enter a new number to be inserted: ");
-      scanf_s("%d", &n);
-      ptrnew = getnode(n);
-      ptrnew->next = ptrthis->next;
-      ptrnew->prev = ptrthis;
-      if (ptrthis->next != ptrnew)
-        (ptrthis->next)->prev = ptrnew;
-      ptrthis->next=ptrnew;
-      return;
+// Function to insert a new node in BST
+struct Node* insert(struct Node* root, int data) {
+    if (root == NULL) {
+        return createNode(data);
     }
-  }
+
+    if (data < root->data) {
+        root->left = insert(root->left, data);
+    } else if (data > root->data) {
+        root->right = insert(root->right, data);
+    }
+
+    return root;
 }
-void insertBefore() {
-  struct node *ptrnew, *ptrthis;
-  int n, target;
-  printf("\nEnter a node after which you want to inset: ");
-  scanf_s("%d", &target);
-  for (ptrthis = header; ptrthis != NULL; ptrthis = ptrthis->next) {
-    if (ptrthis->data == target) {
-      // insert and return
-      printf("Enter a new number to be inserted: ");
-      scanf("%d", &n);
-      ptrnew = getnode(n);
-      ptrnew->prev = ptrthis->prev;
-      ptrnew->next = ptrthis;
-      if (ptrthis->prev != ptrnew)
-        (ptrthis->prev)->next = ptrnew;
-      ptrthis->prev=ptrnew;
-      return;
+
+// Function to find the minimum value node in BST
+struct Node* minValueNode(struct Node* node) {
+    struct Node* current = node;
+    while (current && current->left != NULL) {
+        current = current->left;
     }
-  }
+    return current;
+}
+
+// Function to delete a node from BST
+struct Node* deleteNode(struct Node* root, int data) {
+    if (root == NULL) {
+        return root;
+    }
+
+    if (data < root->data) {
+        root->left = deleteNode(root->left, data);
+    } else if (data > root->data) {
+        root->right = deleteNode(root->right, data);
+    } else {
+        if (root->left == NULL) {
+            struct Node* temp = root->right;
+            free(root);
+            return temp;
+        } else if (root->right == NULL) {
+            struct Node* temp = root->left;
+            free(root);
+            return temp;
+        }
+
+        struct Node* temp = minValueNode(root->right);
+        root->data = temp->data;
+        root->right = deleteNode(root->right, temp->data);
+    }
+    return root;
+}
+
+// Function to search for a node in BST
+struct Node* search(struct Node* root, int data) {
+    if (root == NULL || root->data == data) {
+        return root;
+    }
+
+    if (data < root->data) {
+        return search(root->left, data);
+    }
+
+    return search(root->right, data);
+}
+
+// Function to perform an inorder traversal of BST (left-root-right)
+void inorderTraversal(struct Node* root) {
+    if (root != NULL) {
+        inorderTraversal(root->left);
+        printf("%d ", root->data);
+        inorderTraversal(root->right);
+    }
+}
+
+// Function to free the memory used by the BST
+void freeBST(struct Node* root) {
+    if (root != NULL) {
+        freeBST(root->left);
+        freeBST(root->right);
+        free(root);
+    }
+}
+
+// Main function to interact with the BST through options
+int main() {
+    struct Node* root = NULL;
+    int choice, data;
+
+    do {
+        printf("\nOptions:\n");
+        printf("1. Insert element\n");
+        printf("2. Delete element\n");
+        printf("3. Search element\n");
+        printf("4. Inorder traversal\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+        case 1:
+            printf("Enter element to insert: ");
+            scanf("%d", &data);
+            root = insert(root, data);
+            printf("Element %d inserted into BST.\n", data);
+            break;
+
+        case 2:
+            printf("Enter element to delete: ");
+            scanf("%d", &data);
+            root = deleteNode(root, data);
+            printf("Element %d deleted from BST.\n", data);
+            break;
+
+        case 3:
+            printf("Enter element to search: ");
+            scanf("%d", &data);
+            struct Node* searchResult = search(root, data);
+            if (searchResult != NULL) {
+                printf("%d found in BST.\n", data);
+            } else {
+                printf("%d not found in BST.\n", data);
+            }
+            break;
+
+        case 4:
+            printf("Inorder traversal of BST: ");
+            inorderTraversal(root);
+            printf("\n");
+            break;
+
+        case 5:
+            // Free memory before exiting
+            freeBST(root);
+            printf("BST memory freed. Exiting...\n");
+            break;
+
+        default:
+            printf("Invalid choice. Please try again.\n");
+            break;
+        }
+
+    } while (choice != 5);
+
+    return 0;
 }
