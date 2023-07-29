@@ -20,19 +20,20 @@ bool isEmpty( stack * s){
   return s->top==-1;
 
 }
-void push(stack* s){
+int push(stack* s){
   int y;
   if(isFull(s)){
-    exit(EXIT_FAILURE);
+    return;
   }
   else {
-        printf("Enter a data to be inserted:");
-        scanf("%d\n",&y);
+    printf("Enter a data to be inserted:");
+    scanf("%d\n",&y);
     s->top++;
     s->data[s->top]=y;
     printf("\n%d was inserted\n",y);
 
   }
+  return 0;
 }
 void pop(stack *s){
   int a;
@@ -62,24 +63,26 @@ int main(){
   int x,y;
   stack s;
   init(&s);
-  while(1){
-    printf("Enter a choice:\n1. push\n2. pop\n3. display \n4. exit");
-    scanf("%d\n",&x);
-    switch (x) {
-      case 1:
-        push(&s);
-        break;
-      case 2:
-        pop(&s);
-        break;
-      case 3:
-        display(&s);
-        break;
-      case 4:
-        return 0;
-        break;
-    }
+  do{
+    {
+      printf("Enter a choice:\n1. push\n2. pop\n3. display \n4. exit");
+      scanf("%d\n",&x);
+      switch (x) {
+        case 1:
+          push(&s);
+          break;
+        case 2:
+          pop(&s);
+          break;
+        case 3:
+          display(&s);
+          break;
+        case 4:
+          return 0;
+          break;
+      }
 
+    }while()
   }
   return 0;
 
