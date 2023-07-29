@@ -12,13 +12,6 @@ int isEmpty(struct stack *ptr){
   }
   else
     return 0;
-}int isFull(struct stack *ptr){
-  if(ptr->top==ptr->size-1){
-    return 1;
-  }
-  else
-    return 0;
-} 
 int main(){
   struct stack *s;
   s->top=-1;
