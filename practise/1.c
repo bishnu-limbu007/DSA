@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<stdbool.h>
 #define MAX 100 
-struct stack {
+typedef struct  {
   int top;
   int size;
   int * arr;
-};
-int isEmpty(struct stack *ptr){
-  if(ptr->top=-1){
-    return 1;
-  }
-  else
-    return 0;
+}stac;
+bool isEmpty( stack *s){
+  return (ptr->top=-1)
+}
+bool isFull(stack *s){
+  return s->stack[top]==MAX-1;
+}
 int main(){
   struct stack *s;
   s->top=-1;
