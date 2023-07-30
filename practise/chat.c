@@ -31,6 +31,16 @@ void push(stack *s, int data) {
   }
 }
 
+void pop(stack *s) {
+  if (isEmpty(s)) {
+    printf("Stack is empty. Cannot pop.\n");
+  } else {
+    int a = s->data[s->top];
+    s->top--;
+    printf("Popped item: %d\n", a);
+  }
+}
+
 void display(stack *s) {
   if (isEmpty(s)) {
     printf("Stack is empty.\n");
