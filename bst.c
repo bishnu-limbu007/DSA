@@ -144,7 +144,8 @@ void main()
     system("clear");
     printf("select your option.\n1. Insert\n2. Dispaly\n3. Exit");
     fflush(stdin);
-    ch=getchar();
+    // ch=getchar();
+    scanf("%c",&ch);
   }
 }
 
