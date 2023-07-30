@@ -22,14 +22,6 @@ bool isEmpty(stack *s) {
   return s->top == -1;
 }
 
-void push(stack *s, int data) {
-  if (isFull(s)) {
-    printf("Stack is full. Cannot push %d\n", data);
-  } else {
-    s->top++;
-    s->data[s->top] = data;
-  }
-}
 
 void pop(stack *s) {
   if (isEmpty(s)) {
