@@ -31,4 +31,18 @@ int pop(int data) //pop operation
   
 }
 
+int main()
+{
+  push(1);
+  push(2);
+  push(3);
+  push(4);
+  pop(4);
+  for(int i=0;i<=top;i++)
+  {
+    printf("\n%d",stack_arr[i]);
+  }
+  return 0;
 
+
+  }
