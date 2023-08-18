@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 void toh(int n,char s,char i,char d)
 {
   if(n>0)
