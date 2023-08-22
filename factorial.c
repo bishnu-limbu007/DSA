@@ -1,5 +1,7 @@
 #include <stdio.h>
-int fact(int a){
+
+int fact(int a)
+{
   if(a==0)
   {
     return 1;
@@ -11,8 +13,6 @@ int fact(int a){
 }
 int main()
 {
-  int a;
-  printf("Enter a number");
-  scanf_s("%d",&a);
-  printf("%d is the factorial of %d",a,fact(a));
+  printf("%d is the factorial of 5",fact(5));
+  return 0;
 }
