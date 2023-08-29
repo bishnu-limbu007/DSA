@@ -1,6 +1,4 @@
 #include <stdio.h>
-int main(int argc, char *argv[])
-{ ``
-
-  return EXIT_SUCCESS;
+void main(){
+  printf("hellow world.");
 }
