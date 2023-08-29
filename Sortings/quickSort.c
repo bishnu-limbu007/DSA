@@ -3,19 +3,19 @@
 
 void quickSort(int arr[], int left, int right){
   int pivot = left, down = left, up = right, temp;
-  if(left < right){
+  if(left < right){                                   //if there is at least 2 items in the list
   repeat :
-    while(arr[down] <= arr[pivot] && down <= right)
+    while(arr[down] <= arr[pivot] && down <= right)   //finding greater than and ending to last
       down++;
     while(arr[up] > arr[pivot])
       up--;
-    if(down <= up){
+    if(down <= up){                                   //exchange down with up and repeat
       temp = arr[down];
       arr[down] = arr[up];
       arr[up] = temp;
       goto repeat;
     }
-    else{
+    else{                                             //exchange pivot with up and partitaion the list
       temp = arr[pivot];
       arr[pivot] = arr[up];
       arr[up] = temp;

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 int main(){
-  int arr[10];
+  int arr[];
   for (int i = 0 ; i < 10 ; i++){
     int arr[i] = rand() % 10;
     printf("%d",arr[i]);
