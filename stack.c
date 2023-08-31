@@ -15,10 +15,14 @@ bool isEmpty(){
 }
 
 int push(int n){
-  if(isEmpty()){
+  if(isFull()){
     printf("StackOverflow");
   }
+  else{
 
+  }
+
+  return 0;
 }
 void pop(){
 
