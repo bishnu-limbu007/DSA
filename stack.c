@@ -19,7 +19,8 @@ int main(){
       case 2:
       pop();
       break;
-        case
+      case 3:
+      display();
     }
   }
 }
