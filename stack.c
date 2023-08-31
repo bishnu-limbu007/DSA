@@ -15,6 +15,9 @@ bool isEmpty(){
 }
 
 int push(int n){
+  if(isEmpty()){
+    printf("StackOverflow");
+  }
 
 }
 void pop(){
