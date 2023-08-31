@@ -7,6 +7,16 @@
 int top;
 int arr[MAX];
 
+int push(int n){
+
+}
+void pop(){
+
+}
+void display(){
+
+}
+
 int main(){
   int n;
   char ch;
