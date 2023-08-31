@@ -19,6 +19,8 @@ int push(int n){
     printf("StackOverflow");
   }
   else{
+    printf("enter a number to be inserted.\n");
+    scanf("d", &n);
 
   }
 
