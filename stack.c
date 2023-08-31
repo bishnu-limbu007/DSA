@@ -7,6 +7,10 @@
 int top;
 int arr[MAX];
 
+bool isFull(){
+  return top = MAX-1;
+}
+
 int push(int n){
 
 }
@@ -24,13 +28,15 @@ int main(){
   while(1){
     switch(ch){
       case 1:
-      push();
+      push(n);
       break;
       case 2:
       pop();
       break;
       case 3:
       display();
+      break;
+      case 4:
     }
   }
 }
