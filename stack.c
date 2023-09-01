@@ -62,12 +62,15 @@ int main(){
   char ch;
   scanf("%c", &ch);
   while(1){
+    printf("Enter a choice:");
     switch(ch){
       case 1:
-      push(n);
+        printf("enter a number to be pushed:");
+      push(&s, n);
       break;
       case 2:
-      pop();
+        printf("enter a number to be popped:");
+      pop(&s);
       break;
       case 3:
       display();
