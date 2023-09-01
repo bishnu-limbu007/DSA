@@ -48,7 +48,6 @@ int pop(stack *s){
     return 1;
   }else{
     return s->data[s->top--];
-
   }
 
 }
@@ -57,7 +56,9 @@ void display(){
 }
 
 int main(){
+  stack s;
   int n;
+  initialize(&s); //address sent??
   char ch;
   scanf("%c", &ch);
   while(1){
