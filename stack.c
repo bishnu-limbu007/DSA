@@ -1,7 +1,8 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
-#include <string.h>
+#include<string.h>
 #include<stdbool.h>
+
 #define MAX 100
 
 typedef struct stack {
@@ -31,9 +32,10 @@ bool isEmpty(stack *s) {
 //   return top = -1;
 // }
 
-int push(int n){
-  if(isFull(stack s)){
+int push(stack *s, int n){
+  if(isFull(s)){
     printf("StackOverflow");
+    return;
   }
   else{
     printf("enter a number to be inserted.\n");
