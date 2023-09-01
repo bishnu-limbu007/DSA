@@ -4,6 +4,23 @@
 #include<stdbool.h>
 #define MAX 100
 
+typedef struct stack {
+    int data[MAX];
+    int top;
+} stack;
+
+void initialize(stack *s) {
+    s->top = -1;
+}
+
+bool isFull(stack *s) {
+    return s->top == MAX - 1;
+}
+
+bool isEmpty(stack *s) {
+    return s->top == -1;
+}
+
 int top;
 int arr[MAX];
 
