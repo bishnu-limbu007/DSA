@@ -32,7 +32,7 @@ bool isEmpty(stack *s) {
 // }
 
 int push(int n){
-  if(isFull()){
+  if(isFull(stack s)){
     printf("StackOverflow");
   }
   else{
