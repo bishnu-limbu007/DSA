@@ -32,18 +32,15 @@ bool isEmpty(stack *s) {
 //   return top = -1;
 // }
 
-int push(stack *s, int n){
+void push(stack *s, int n){
   if(isFull(s)){
     printf("StackOverflow");
     return;
   }
   else{
     printf("enter a number to be inserted.\n");
-    scanf("d", &n);
-
+    s->data[++s->top = n;
   }
-
-  return 0;
 }
 void pop(){
 
