@@ -21,15 +21,15 @@ bool isEmpty(stack *s) {
     return s->top == -1;
 }
 
-int top;
-int arr[MAX];
+// int top;
+// int arr[MAX];
 
-bool isFull(){
-  return top = MAX-1;
-}
-bool isEmpty(){
-  return top = -1;
-}
+// bool isFull(){
+//   return top = MAX-1;
+// }
+// bool isEmpty(){
+//   return top = -1;
+// }
 
 int push(int n){
   if(isFull()){
