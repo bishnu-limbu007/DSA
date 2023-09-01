@@ -39,10 +39,17 @@ void push(stack *s, int n){
   }
   else{
     printf("enter a number to be inserted.\n");
-    s->data[++s->top = n;
+    s->data[++s->top] = n;
   }
 }
-void pop(){
+int pop(stack *s){
+  if(isEmpty(s)){
+    printf("Stack underflow.");
+    return 1;
+  }else{
+    return s->data[s->top--];
+
+  }
 
 }
 void display(){
