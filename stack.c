@@ -63,10 +63,9 @@ void display(stack *s){
 
 int main(){
   stack s;
-  int n;
+  int n, ch;
   initialize(&s); //address sent??
-  char ch;
-  scanf("%c", &ch);
+  scanf("%d", &ch);
   while(1){
     printf("Enter a choice:");
     switch(ch){

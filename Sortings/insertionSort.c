@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void insertionSort(int arr[], int n){
-  int i,j,k;
+  int i,j,k; 
   for (i=1 ; i<n; i++){   // startings from second item so i=1
     k = arr[i];    //second item = k
     for(j=i-1 ; j>=0 && arr[j]>k ; j--){     //if k is smaller than previour number(j-1)     move one position right so that there will be room for insertion
