@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 #define MAX 10
+#define HIGEST 9
+
 
 int higest(int arr[], int n){
   int i, max=arr[0];
@@ -12,6 +14,10 @@ return max;
 }
 
 void countSort(int arr[], int n){
+  int temp[MAX];
+  int count[HIGEST];
+  int max=higest(arr, n);
+  int i;
 
 
 }
