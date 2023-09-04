@@ -38,5 +38,6 @@ int main(){
   printf("After sortings.....\n");
   for (i=0;i<MAX;i++)
     printf("%d ", arr[i]);
+  printf("\n");
   return 0;
 }
