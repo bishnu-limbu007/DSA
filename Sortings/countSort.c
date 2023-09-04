@@ -4,7 +4,7 @@
 #define HIGHEST 9
 
 int higest(int arr[], int n){
-  int i, max=arr[0];
+  int i, max=arr[0], count[HIGHEST+1]={0};
   for(i=1;i<n;i++){
     if(max<arr[i])
       max=arr[i];
