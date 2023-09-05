@@ -17,6 +17,17 @@ int getMaxDigit(int arr[], int n){
       max =arr[i];
   return getDigitCount(max);
 }
+void countSort(int arr[], int n, int pos){
+  int temp[MAX], count[10]={0}, i;
+  for(i=0;i<n;i++){
+    count[(arr[i]/pos)%10]++;
+  }
+  for(i=1;i<10;i++)
+    count[i]+=count[i-1];
+  for(i=n-1;i>=0;i--){
+
+  }
+}
 void radixSort(int arr[], int n, int pos){
     int temp;
 }
