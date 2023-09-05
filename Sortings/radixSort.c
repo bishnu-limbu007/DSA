@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define MAX 20
+
 int getDigitCount(int n){
   int count=0;
   while(n>0){
@@ -12,10 +13,11 @@ int getDigitCount(int n){
 int getMaxDigit(int arr[], int n){
   int max=arr[0], i;
   for(i=1; i<n; i++)
-    max = arr[i];
+   if( max < arr[i])
+      max =arr[i];
   return getDigitCount(max);
 }
-void countSort(int arr[], int n, int pos){
+void radixSort(int arr[], int n, int pos){
     int temp;
 }
 
