@@ -1,5 +1,5 @@
 #include <stdio.h>
-  inc
+#define MAX 20
 int getDigitCount(int n){
   int count=0;
   while(n>0){
