@@ -30,23 +30,22 @@ void countSort(int arr[], int n, int pos){
   for(i=0;i<n;i++)
     arr[i]= temp[i];
 }
-void radixSort(int arr[], int n, int pos){
-    int temp;
+void radixSort(int arr[], int n){
+  int digitCount=getMaxDigit(arr, n);
+  int i,pos;
+  for(i=1,pos=1;i<=digitCount;i++,pos=pos*10)
+    countSort(arr, n, pos);
 }
 
-
-
-
 int main(){
-  int arr[] = {9,8,7,6,5,4,3,2,1,0};
+  int arr[] = {9,0,7,6,5,4,3,2,1,0};
   int i;
   printf("Before sortings....\n");
-
   for (i=0 ; i<10 ; i++){
     printf("%d ", arr[i]);
   }
   printf("\nAfter sortings....\n");
-  radixSort(arr,0,9); //from 0 to 9th index
+  radixSort(arr,9); //from 0 to 9th index
 
   for (i=0 ; i<10 ; i++){
     printf("%d ", arr[i]);
