@@ -3,14 +3,14 @@
 
 int binarySearch(int arr[], int low, int high, int key){
   int mid;
-  while(low <= high){
+  if(low <= high){
     mid=(low + high) / 2;
     if(arr[mid] == key)
       return mid;
     else if(arr[mid] > key)
-        binarySearch(arr, low, mid-1, key);
+      return binarySearch(arr, low, mid-1, key);
     else
-        binarySearch(arr, mid+1 , high, key);
+       return binarySearch(arr, mid+1 , high, key);
   }
   return -1;
 }
