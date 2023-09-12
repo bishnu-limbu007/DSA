@@ -1,19 +1,26 @@
 #include <stdio.h>
-void toh(int n,char s,char i,char d)
+
+void toh(int n, char source, char intermediate, char destination)
 {
-  if(n>0)
-  {
-    toh(n-1,s,d,i);
-    printf("\nmoved: %dth disk form %c to %c",n,s,d);
-toh(n-1,i,s,d);
-  }
+    if (n > 0)
+    {
+        // Move n-1 disks from source to intermediate using destination as the auxiliary rod
+        toh(n - 1, source, destination, intermediate);
+
+        // Move the nth disk from source to destination
+        printf("\nMoved %dth disk from %c to %c", n, source, destination);
+
+        // Move n-1 disks from intermediate to destination using source as the auxiliary rod
+        toh(n - 1, intermediate, source, destination);
+    }
 }
-void main()
+
+int main()
 {
-  int n;
-  printf("how many disk");
-  printf("how many disk");
-  scanf_s("%d",&n);
-  toh(n,'S','I','D');
-  _getch();
+    int n;
+    printf("How many disks? ");
+    scanf("%d", &n);
+    toh(n, 'S', 'I', 'D');
+
+    return 0;
 }
