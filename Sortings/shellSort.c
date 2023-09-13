@@ -15,7 +15,7 @@ void shellSort(int arr[], int n){
 
 
 int main(){
-  int arr[] = {5,8,16,52,12,3,7,8,9,10};
+  int arr[] = {9,8,7,6,5,4,3,2,1,0};
   printf("before sorting......\n");
   for (int i = 0; i<sizeof(arr)/sizeof(int);i++){
     printf("%d ", arr[i]);
