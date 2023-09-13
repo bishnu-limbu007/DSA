@@ -54,7 +54,7 @@ void postorderTraversal(struct TreeNode* root) {
 }
 
 int main() {
-    int keys[] = {9,8,7,6,5,4,3,2,1,0};
+    int keys[] = {4, 2, 6, 1, 3, 5, 7};
     int numKeys = sizeof(keys) / sizeof(keys[0]);
     
     struct TreeNode* root = NULL;
