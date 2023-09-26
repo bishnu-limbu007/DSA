@@ -8,6 +8,8 @@ struct stack{
 int main(){
   struct stack s;
    s.top = 100;
-  printf("output:", s.top);
+  printf("output:%d", s.top);
   return 0;
 }
+#include <stdio.h>
+
