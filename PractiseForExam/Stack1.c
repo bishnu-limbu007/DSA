@@ -7,7 +7,7 @@ struct stack{
 
 int main(){
   struct stack s;
-  int top = 100;
+   s.top = 100;
   printf("output:", s.top);
   return 0;
 }
