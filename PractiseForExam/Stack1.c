@@ -11,5 +11,4 @@ int main(){
   printf("output:%d", s.top);
   return 0;
 }
-#include <stdio.h>
 
