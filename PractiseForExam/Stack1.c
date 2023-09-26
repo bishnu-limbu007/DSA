@@ -15,8 +15,6 @@ void push(stack *s, int value){
   if(s->top==MAX-1){
     printf("stack is full");
   }else{
-    printf("\nEnter a number to be pushed.");
-    scanf("%d", &value);
     s->data[++s->top]= value;
   }
 }
@@ -29,7 +27,7 @@ void pop(stack *s){
 }
 void display(stack *s){
   for(int i=0;i<=s->top;i++){
-    printf("%d", s->data[i]);
+    printf("%d\n", s->data[i]);
   }
 }
 
