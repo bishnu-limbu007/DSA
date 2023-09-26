@@ -1,12 +1,15 @@
 #include<stdio.h>
+#include<stdbool.h>
+#define MAX 10
 
-struct stack{
+typedef struct {
   int top;
+  int data[MAX];
 
-};
+}stack;
 
 int main(){
-  struct stack s;
+  stack s;
    s.top = 100;
   printf("output:%d", s.top);
   return 0;
