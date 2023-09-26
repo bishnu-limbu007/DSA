@@ -20,6 +20,13 @@ void push(stack *s, int value){
     s->data[++s->top]= value;
   }
 }
+void pop(stack *s){
+  if(s->top==-1){
+    printf("stack underflow");
+  }else{
+    s->data[s->top--];
+  }
+}
 void display(stack *s){
   for(int i=0;i<=s->top;i++){
     printf("%d", s->data[i]);
@@ -29,6 +36,9 @@ void display(stack *s){
 int main(){
   stack s;
   push(&s, 100);
+  push(&s, 101);
+  push(&s, 102);
+  pop(&s);
   display(&s);
   return 0;
 }
