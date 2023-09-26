@@ -20,11 +20,16 @@ void push(stack *s, int value){
     s->data[++s->top]= value;
   }
 }
+void display(stack *s){
+  for(int i=0;i<=s->top;i++){
+    printf("%d", s->data[i]);
+  }
+}
 
 int main(){
   stack s;
   push(&s, 100);
-  printf("output:%d", s.top);
+  display(&s);
   return 0;
 }
 
