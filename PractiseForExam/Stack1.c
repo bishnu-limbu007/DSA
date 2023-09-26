@@ -8,9 +8,22 @@ typedef struct {
 
 }stack;
 
+void init(stack *s){
+  s->top=-1;
+}
+void push(stack *s, int value){
+  if(s->top==MAX-1){
+    printf("stack is full");
+  }else{
+    printf("\nEnter a number to be pushed.");
+    scanf("%d", &value);
+    s->data[++s->top]= value;
+  }
+}
+
 int main(){
   stack s;
-   s.top = 100;
+  push(&s, 100);
   printf("output:%d", s.top);
   return 0;
 }
