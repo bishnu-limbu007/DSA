@@ -8,7 +8,7 @@ struct Node{
 
 void traverse(struct Node *ptr){
   while(ptr!=0){
-    printf("elements:" ptr->data);
+    printf("elements: %d\n", ptr->data);
     ptr=ptr->next;
   }
 }
