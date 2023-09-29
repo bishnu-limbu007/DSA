@@ -38,7 +38,6 @@ int main(){
   traverse(head);
   printf("\n");
   head= insertAtFirst(head,199);
-  printf("\n");
   traverse(head);
   return 0;
 }
