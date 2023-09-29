@@ -5,6 +5,12 @@ struct Node{
   int data;
   struct Node *next;
 };
+
+void traversal(struct Node*ptr){
+ printf("%d",ptr->data);
+  ptr=ptr->next;
+}
+
 int main(){
   struct Node * head;
   struct Node * second;
