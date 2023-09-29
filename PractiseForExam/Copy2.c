@@ -12,6 +12,9 @@ struct Node*insertAtFirst(struct Node *head, int data){
   ptr->data = data;
   return ptr;
 }
+struct Node * insertAtBewteen(struct Node*ptr, int data){
+
+}
 
 void traverse(struct Node *ptr){
   while(ptr!=0){
@@ -34,7 +37,6 @@ int main(){
   third->next =NULL;
   traverse(head);
   head= insertAtFirst(head,199);
-  traverse(head);
   traverse(head);
   return 0;
 }
