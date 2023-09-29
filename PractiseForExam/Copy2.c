@@ -15,7 +15,7 @@ struct Node*insertAtFirst(struct Node *head, int data){
 
 void traverse(struct Node *ptr){
   while(ptr!=0){
-    printf("elements: %d", ptr->data);
+    printf("elements: %d\n", ptr->data);
     ptr=ptr->next;
   }
 }
