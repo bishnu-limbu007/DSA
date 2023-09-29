@@ -6,9 +6,16 @@ struct Node{
   struct Node *next;
 };
 
+struct Node*insertAtFirst(struct Node *head, int data){
+  struct Node *ptr =(struct Node*)malloc(sizeof(struct Node));
+  ptr->next = head;
+  ptr->data = data;
+  return ptr;
+}
+
 void traverse(struct Node *ptr){
   while(ptr!=0){
-    printf("elements: %d\n", ptr->data);
+    printf("elements: %d", ptr->data);
     ptr=ptr->next;
   }
 }
@@ -25,6 +32,9 @@ int main(){
   second->next= third;
   third->data = 202;
   third->next =NULL;
+  traverse(head);
+  head= insertAtFirst(head,199);
+  traverse(head);
   traverse(head);
   return 0;
 }
