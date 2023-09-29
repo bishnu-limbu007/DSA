@@ -36,6 +36,7 @@ int main(){
   third->data = 202;
   third->next =NULL;
   traverse(head);
+  printf("\n");
   head= insertAtFirst(head,199);
   traverse(head);
   return 0;
