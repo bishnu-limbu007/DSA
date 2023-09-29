@@ -6,7 +6,7 @@ struct Node{
   struct Node *next;
 };
 
-void traversal(struct Node*ptr){
+void traversal(struct Node *ptr){
   while(ptr!=NULL){
  printf("element : %d",ptr->data);
   ptr=ptr->next;
