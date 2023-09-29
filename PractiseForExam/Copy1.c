@@ -8,8 +8,11 @@ struct Node{
 };
 
 void display(struct Node*ptr){
-  while(ptr!=NULL)
-    printf("elemets: %d\n" ptr->data);
+  while(ptr!=NULL){
+    printf("elements: %d\n", ptr->data);
+    ptr=ptr->next;
+  }
+
 }
 int main(){
   struct Node *head;
