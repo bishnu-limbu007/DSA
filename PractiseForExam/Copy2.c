@@ -12,7 +12,18 @@ struct Node*insertAtFirst(struct Node *head, int data){
   ptr->data = data;
   return ptr;
 }
-struct Node * insertAtBewteen(struct Node*ptr, int data){
+struct Node * insertAtBewteen(struct Node*head, int data,int index){
+  struct Node *ptr= (struct Node*)malloc(sizeof(struct Node));
+    struct Node* p = head;
+  int i=0;
+  while(i!=index){
+    p = p->next;
+    i++;
+  }
+  ptr->data=data;
+  ptr->next = p->next;
+  p->next = ptr;
+  return head;
 
 }
 
@@ -37,7 +48,8 @@ int main(){
   third->next =NULL;
   traverse(head);
   printf("\n");
-  head= insertAtFirst(head,199);
+  // head= insertAtFirst(head,199);
+  head= insertAtBewteen(head,192,1);
   traverse(head);
   return 0;
 }
