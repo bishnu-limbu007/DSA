@@ -1,22 +1,22 @@
-// #include<stdio.h>
-// #include<stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-// struct Node{
-//   int data;
-//   struct Node *next;
-// };
+struct Node{
+  int data;
+  struct Node *next;
+};
 
-// struct Node*insertAtFirst(struct Node *head, int data){
-//   struct Node *ptr =(struct Node*)malloc(sizeof(struct Node));
-//   ptr->next = head;
-//   ptr->data = data;
-//   return ptr;
-// }
-// struct Node * insertAtBewteen(struct Node*head, int data,int index){
-//   struct Node *ptr= (struct Node*)malloc(sizeof(struct Node));
-//     struct Node* p = head;
-//   int i=0;
-/   while(i!=index){
+struct Node*insertAtFirst(struct Node *head, int data){
+  struct Node *ptr =(struct Node*)malloc(sizeof(struct Node));
+  ptr->next = head;
+  ptr->data = data;
+  return ptr;
+}
+struct Node * insertAtBewteen(struct Node*head, int data,int index){
+  struct Node *ptr= (struct Node*)malloc(sizeof(struct Node));
+    struct Node* p = head;
+  int i=0;
+  while(i!=index){
     p = p->next;
     i++;
   }
