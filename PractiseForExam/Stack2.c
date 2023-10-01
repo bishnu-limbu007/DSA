@@ -23,14 +23,13 @@ void pop(stack *s){
   }
 }
 void display(stack *s){
-  for(int i =0;i<s->top;i++){
+  for(int i =0;i<=s->top;i++){
     printf("data: %d", s->data[i]);
   }
 }
 int main(){
   stack s;
-  s->top=-1;
-  init(&s);
+  s.top=-1;
   push(&s, 1);
   push(&s, 2);
   push(&s, 3);
