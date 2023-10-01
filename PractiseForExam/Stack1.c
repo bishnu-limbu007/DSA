@@ -22,7 +22,7 @@ void pop(stack *s){
   if(s->top==-1){
     printf("stack underflow");
   }else{
-    s->data[s->top--]
+    s->data[s->top--];
   }
 }
 void display(stack *s){
