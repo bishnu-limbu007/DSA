@@ -5,7 +5,6 @@
 typedef struct {
   int top;
   int data[MAX];
-
 }stack;
 
 void init(stack *s){
