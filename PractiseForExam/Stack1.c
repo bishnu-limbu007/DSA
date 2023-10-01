@@ -33,6 +33,7 @@ void display(stack *s){
 
 int main(){
   stack s;
+  init(&s);
   push(&s, 100);
   push(&s, 101);
   push(&s, 102);
