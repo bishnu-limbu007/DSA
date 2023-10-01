@@ -2,14 +2,11 @@
 #define MAX 10
 
 typedef struct{
-  int data;
-  int top[MAX];
+  int top;
+  int data[MAX];
 }stack;
 
-void init(stack s){
-  s->top=-1;
-}
-void push(stack s,int value){
+void push(stack *s,int value){
   if(s->top==MAX-1){
     printf("stack overflow");
   }
@@ -17,7 +14,7 @@ void push(stack s,int value){
     s->data[++s->top]= value;
   }
 }
-void pop(stack s){
+void pop(stack *s){
   if(s->top==-1){
     printf("stack underflow");
   }
@@ -25,13 +22,14 @@ void pop(stack s){
     s->data[s->top--];
   }
 }
-void display(stack s){
+void display(stack *s){
   for(int i =0;i<s->top;i++){
-    printf("data: %d", s.data[i]);
+    printf("data: %d", s->data[i]);
   }
 }
 int main(){
   stack s;
+  s->top=-1;
   init(&s);
   push(&s, 1);
   push(&s, 2);
