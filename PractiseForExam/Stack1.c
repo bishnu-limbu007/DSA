@@ -38,5 +38,6 @@ int main(){
   push(&s, 102);
   pop(&s);
   display(&s);
+  return 0;
 }
 
