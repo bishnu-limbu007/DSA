@@ -1,28 +1,32 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Queue{
+struct queue{
   int size;
   int rear;
   int front;
   int *arr;
 };
-void enqueue(struct Queue *q,int value){
+void enqueue(struct queue *q,int value){
   q->rear=q->rear+1;
   q->arr[q->rear]= value;
 
 }
-void display(struct Queue *q){
+void display(struct queue *q){
   for(int i=0;i<=q->rear;i++){
     printf("data: %d", q->arr[i]);
   }
 }
-void dequeue(struct Queue *q){
-  q->front++;
+void dequeue(struct queue *q) {
+  if (q->front == -1) {
+    printf("Queue is empty\n");
+  } else {
+    q->front++;
+  }
 }
-
 int main(){
-  struct Queue q;
+  struct queue q;
+  q.size=3;
   q.arr=(int*)malloc(q.size*sizeof(int));
   q.rear=q.front=-1;
   enqueue(&q, 10);
