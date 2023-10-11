@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-
+//hello
 #define MAX 10
 
 typedef struct stack {
